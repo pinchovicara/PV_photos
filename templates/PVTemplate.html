@@ -197,6 +197,14 @@ div#GoToTop a {
 	right: 10px;
 	z-index: 2;
 }
+
+div#GoToBottom a {
+	position: fixed;
+	top:10px;
+	right: 10px;
+	z-index: 2;
+}
+
 </style>
 </head>
 <body>
@@ -204,7 +212,12 @@ div#GoToTop a {
 
 <div id="GoToTop">
 	<a href="#">
-		<img src="./images/flèche.png" alt="Revenir en haut de la page" title="Revenir en haut de la page">
+		<img src="./images/flèche_top.png" alt="Revenir en haut de la page" title="Revenir en haut de la page">
+	</a>
+</div>
+<div id="GoToBottom">
+	<a href="#bottom">
+		<img src="./images/flèche_bottom.png" alt="Revenir en bas de la page" title="Revenir en bas de la page">
 	</a>
 </div>
 <br />
@@ -222,6 +235,6 @@ div#GoToTop a {
 <!-- CREDITS - DO NOT REMOVE OR YOU WILL VOID MiniGal Nano TERMS OF USE -->
 <div class="backlink" align="center">Galerie par <% author %> / <a href="http://www.minigal.dk" title="Powered by MiniGal Nano" target="_blank">Powered by MiniGal Nano <% version %></a> <a href="http://sebsauvage.net/wiki/doku.php?id=minigal_nano">SSE2</a> / Thème : PVTemplate 1.0</div>
 <br /><br />
-<div
+<div id="bottom"></div>
 </body>
 </html>
