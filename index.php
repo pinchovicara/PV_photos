@@ -54,6 +54,7 @@ $images = "";
 $exif_data = "";
 $messages = "";
 $comment = "";
+$folder_title = "";
 
 
 //-----------------------
@@ -311,6 +312,18 @@ if (sizeof($dirs) + sizeof($files) > $thumbs_pr_page)
 }
 
 //-----------------------
+// FOLDER TITLE
+//-----------------------
+
+if ($_GET['dir'] != "")
+{
+	$navitems = explode("/", $_REQUEST['dir']);
+	if (sizeof($navitems) != 0) {
+		$folder_title = $navitems[sizeof($navitems)-1] . " - ";
+	}
+}
+
+//-----------------------
 // BREADCRUMB NAVIGATION
 //-----------------------
 if ($_GET['dir'] != "")
@@ -414,6 +427,7 @@ if (file_exists($comment_filepath))
 		$template = preg_replace("/<% gallery_width %>/", "$gallery_width", $template);
 		$template = preg_replace("/<% version %>/", "$version", $template);
 		$template = preg_replace("/<% thumb_size %>/", "$thumb_size", $template);
+		$template = preg_replace("/<% folder_title %>/", "$folder_title", $template);
 		echo "$template";
 	}
 
